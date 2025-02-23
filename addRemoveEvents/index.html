@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add remove</title>
+    <style>
+      ol {
+        border: 2px solid red;
+      }
+      li {
+        border: 2px solid blue;
+        width: fit-content;
+        margin: 5px auto;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Egula change hobe</h1>
+    <button id="add-item-btn">Add Item</button>
+    <ol id="list-items">
+      <li class="items">Item number 1</li>
+      <li class="items">Item number 2</li>
+      <li class="items">Item number 3</li>
+      <li class="items">Item number 4</li>
+      <li class="items">Item number 5</li>
+    </ol>
+
+    <script>
+      document
+        .getElementById("list-items")
+        .addEventListener("click", function (event) {
+            if (event.target.tagName === "LI") {
+              event.target.remove();
+            }
+        });
+
+      document
+        .getElementById("add-item-btn")
+        .addEventListener("click", function () {
+          const ol = document.getElementById("list-items");
+          const li = document.createElement("li");
+          li.classList.add("items");
+          li.innerText = "New item added";
+          ol.appendChild(li);
+        });
+    </script>
+  </body>
+</html>
